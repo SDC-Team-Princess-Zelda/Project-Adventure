@@ -16,6 +16,7 @@ function StyleSelector() {
   const { setPreviewStyle } = usePreviewStyle();
 
   const handleStyleThumbnailClick = (styleId) => {
+    console.log(styleId);
     setActiveStyle(styleId);
     trackEvent({ element: `Thumbnail ${styleId} Clicked` });
   };

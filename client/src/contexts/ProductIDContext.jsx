@@ -27,7 +27,7 @@ function ProductProvider({ productId, children }) {
 
   React.useEffect(() => {
     if (currentProductId) {
-      axios({ method: 'get', url: `/products/${currentProductId}` })
+      axios({ method: 'get', url: `http://localhost:3100/products/${currentProductId}` })
         .then(({ data }) => {
           setCurrentProduct(data);
         })

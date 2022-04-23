@@ -38,7 +38,7 @@ function StylesProvider({ children }) {
 
   React.useEffect(() => {
     if (currentProductId) {
-      axios({ method: 'get', url: `/products/${currentProductId}/styles` })
+      axios({ method: 'get', url: `http://localhost:3100/products/${currentProductId}/styles` })
         .then(({ data }) => { setCurrentStyles(data.results); })
         .catch(() => setCurrentStyles([]));
     }

@@ -21,7 +21,7 @@ export function ProdProvider({ children }) {
     if (related) {
       Promise.all(related.map((number) => axios({
         method: 'get',
-        url: `products/${number}`,
+        url: `http://localhost:3100/products/${number}`,
       })))
         .then((data) => {
           setRelatedInformation({ data });

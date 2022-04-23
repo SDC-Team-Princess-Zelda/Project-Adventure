@@ -20,7 +20,7 @@ export function RelatedProvider({ children }) {
     if (currentProductId) {
       axios({
         method: 'get',
-        url: `products/${currentProductId}/related`,
+        url: `http://localhost:3100/products/${currentProductId}/related`,
       })
         .then(({ data }) => {
           setRelatedInfo(data);

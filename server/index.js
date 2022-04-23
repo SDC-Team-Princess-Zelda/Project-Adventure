@@ -26,6 +26,72 @@ app.use(cors());
 // on the clientside
 // Be sure that you have configured your .env file to contain your personal GihHub token
 
+app.get('/products/:id/related', (req, res) => {
+  const { method, params, body } = req;
+  console.log(req.url);
+  const url = `${req.url}`;
+  axios({
+    url,
+    method,
+    params,
+    data: body,
+    headers: { Authorization: `${process.env.GITHUB_APIKEY}` },
+  })
+    .then((result) => {
+      const newData = result.data;
+      res.send(newData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404);
+      res.send(err);
+    });
+});
+
+app.get('/products/:id/styles', (req, res) => {
+  const { method, params, body } = req;
+  console.log(req.url);
+  const url = `${req.url}`;
+  axios({
+    url,
+    method,
+    params,
+    data: body,
+    headers: { Authorization: `${process.env.GITHUB_APIKEY}` },
+  })
+    .then((result) => {
+      const newData = result.data;
+      res.send(newData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404);
+      res.send(err);
+    });
+});
+
+app.get('/products/:id/', (req, res) => {
+  const { method, params, body } = req;
+  console.log(req.url);
+  const url = `${req.url}`;
+  axios({
+    url,
+    method,
+    params,
+    data: body,
+    headers: { Authorization: `${process.env.GITHUB_APIKEY}` },
+  })
+    .then((result) => {
+      const newData = result.data;
+      res.send(newData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404);
+      res.send(err);
+    });
+});
+
 app.all('/*', (req, res) => {
   const { method, params, body } = req;
   const url = `https://app-hrsei-api.herokuapp.com/api/fec2/rfp${req.url}`;

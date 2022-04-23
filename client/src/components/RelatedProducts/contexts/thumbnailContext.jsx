@@ -20,7 +20,7 @@ export function ThumbnailProvider({ children }) {
     if (related) {
       Promise.all(related.map((number) => axios({
         method: 'get',
-        url: `products/${number}/styles`,
+        url: `http://localhost:3100/products/${number}/styles`,
       })))
         .then((data) => {
           setThumbnailInformation({ data });
